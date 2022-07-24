@@ -113,6 +113,7 @@ header button i {
   margin-right: 0.5rem;
 }
 .card .description p {
+  word-wrap: break-word;
   margin: 0.8rem 0;
 }
 @media screen and (min-width: 768px) {
@@ -173,10 +174,15 @@ header button i {
   border: none;
   color: hsl(0deg, 0%, 100%);
   background-color: hsl(209deg, 23%, 22%);
-  padding: 0 0.5rem 0 1rem;
+  padding: 0 2rem 0 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media screen and (min-width: 768px) {
+  #search .searchBar label {
+    padding: 0 0.5rem 0 1rem;
+  }
 }
 #search .searchBar input {
   height: 100%;
@@ -188,6 +194,9 @@ header button i {
   border-radius: 0 5px 5px 0;
   color: white;
   font-size: 22px;
+}
+#search .searchBar input::placeholder {
+  color: white;
 }
 @media screen and (min-width: 768px) {
   #search .searchBar input {
@@ -278,7 +287,7 @@ header button i {
 
 #countryDetails {
   font-size: 16px;
-  padding: 55px;
+  padding: 7vw;
 }
 @media screen and (min-width: 992px) {
   #countryDetails {
@@ -320,9 +329,7 @@ header button i {
 @media screen and (min-width: 992px) {
   #details img {
     width: 39vw;
-    height: 29vw;
-    max-width: 560px;
-    max-height: 400px;
+    height: 400px;
   }
 }
 #details .country {
@@ -386,6 +393,7 @@ header button i {
 #details .country .neighbours p {
   width: 100%;
   align-self: center;
+  font-weight: 600;
 }
 @media screen and (min-width: 992px) {
   #details .country .neighbours p {
@@ -393,14 +401,15 @@ header button i {
   }
 }
 #details .country .neighbours button {
-  width: 95px;
+  min-width: 95px;
   height: 30px;
-  margin: 0.5rem 0.5rem;
+  margin: 0.5rem 1rem;
   background-color: hsl(209deg, 23%, 22%);
   border: none;
   border-radius: 5px;
   box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.13);
   color: hsl(0deg, 0%, 100%);
+  padding: 0 0.5rem;
 }
 #details .country .neighbours button:first-of-type {
   margin-left: 0;
@@ -420,6 +429,9 @@ header button i {
 }
 .light #search .searchBar label, .light #search .searchBar input {
   background-color: hsl(0deg, 0%, 98%);
+  color: hsl(200deg, 15%, 8%);
+}
+.light #search .searchBar input::placeholder {
   color: hsl(200deg, 15%, 8%);
 }
 .light .filters #select {

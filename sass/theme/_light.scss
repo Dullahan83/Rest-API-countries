@@ -4,10 +4,15 @@
         background-color: $bg-light;
         color: $text-light;
     }
-    #search .searchBar label, #search .searchBar input{
+    #search .searchBar label, #search .searchBar input {
         background-color: $bg-light;
         color: $text-light;
     }
+
+    #search .searchBar input::placeholder{
+        color: $text-light
+    }
+    
     .filters #select{
         background-color: $bg-light;
         color: $text-light;

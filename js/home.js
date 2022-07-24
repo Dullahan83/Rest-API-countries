@@ -11,6 +11,7 @@ let countryArray
 
 function createCard(country){
     let codePlace = document.getElementById("countryList")
+    let population = new Intl.NumberFormat("en-EN").format(country.population)
     let div = document.createElement("div")
     div.setAttribute("class", "country")
     div.innerHTML = `<a href="./country.html?name=${country.name.common}">
@@ -18,7 +19,7 @@ function createCard(country){
                                 <img src=${country.flags.png} alt=${country.name.common}'s flag>
                                 <figcaption class="description">
                                     <h3 class="countryName">${country.name.common}</h3>
-                                    <p class="population"><span>Population:</span>${country.population}</p>
+                                    <p class="population"><span>Population:</span>${population}</p>
                                     <p class="region"><span>Region:</span>${country.region}</p>
                                     <p class="capital"><span>Capital:</span>${country.capital}</p>
                                 </figcaption>
@@ -40,9 +41,8 @@ async function getData(){
     /* for(let i = 0; i<10; i++){
         createCard(countryArray[i])
     } */
-    
-    
 }
+
 
 function sort(countryArray){
     let sort = countryArray.sort((a,b) =>{

@@ -17,6 +17,7 @@ function getData(country){
     .then(data => data.json())
     .then( country => {
         createCard(country)
+        console.log(country)
     })
 }
 getData(params)
@@ -25,7 +26,7 @@ getData(params)
 function createCard(country){
     let languages = getLanguages(country[0].languages)
     let currencies = getCurrencies(country[0].currencies)
-
+    let population = new Intl.NumberFormat("en-EN").format(country[0].population)
     let codePlace = document.getElementById("details")
     codePlace.innerHTML = 
     `<img src="${country[0].flags.png}" alt="${country[0].name.common}'s flag">
@@ -34,7 +35,7 @@ function createCard(country){
         <div class="countryInfos">
             <div class="first">
                 <p><span class="bold">Native Name:</span>${country[0].name.official}</p>
-                <p><span class="bold">Population:</span>${country[0].population}</p>
+                <p><span class="bold">Population:</span>${population}</p>
                 <p><span class="bold">Region:</span>${country[0].region}</p>
                 <p><span class="bold">Sub Region:</span>${country[0].subregion}</p>
                 <p><span class="bold">Capital:</span>${country[0].capital}</p>
@@ -60,17 +61,19 @@ function createCard(country){
 
 function addBorderCountries(country){
     for(let border of country.borders){
-        let neighbours = document.querySelector(".neighbours")
-        let link = document.createElement("a")
-        /* link.setAttribute("href", `./country.html?name=${border}`) */
-        neighbours.appendChild(link)
-        let button = document.createElement("button")
-        button.setAttribute("class", "neighbour hover-pointer")
-        button.textContent = border
-        link.appendChild(button)
-        button.addEventListener("click", (e) => {
-            borderCountriesNavigation(e.target)
-        })
+        fetch(`https://restcountries.com/v3.1/alpha/${border}`)
+        .then(data => data.json())
+        .then(country => {
+            let content = country[0].name.common
+            let neighbours = document.querySelector(".neighbours")
+            let link = document.createElement("a")
+            link.setAttribute("href", `./country.html?name=${content}`)
+            neighbours.appendChild(link)
+            let button = document.createElement("button")
+            button.setAttribute("class", "neighbour hover-pointer")
+            button.textContent = content
+            link.appendChild(button)
+        })   
     }
 }
 
@@ -96,15 +99,3 @@ function getCurrencies(infoObject){
 }
 
 
-
-function borderCountriesNavigation(code){
-    let params = code.textContent;
-    let target = code.closest("a")
-    fetch(`https://restcountries.com/v3.1/alpha/${params}`)
-    .then(data => data.json())
-    .then(country => {
-        target.setAttribute("href", `./country.html?name=${country[0].name.common}`)
-        console.log(target)
-        createCard(country[0])
-    })
-}
