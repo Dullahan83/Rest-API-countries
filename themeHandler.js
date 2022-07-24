@@ -10,7 +10,7 @@ button.addEventListener("click", () => {
     document.querySelector("body").classList.toggle("light")
     lightOn = !lightOn;
     setInLocal(lightOn)
-    lightOn ? button.innerHTML= light : button.innerHTML= dark
+    !lightOn ? button.innerHTML= light : button.innerHTML= dark
     playSound(lightOn)
 })
 
@@ -33,7 +33,7 @@ function setTheme(){
         body.classList.remove("light")
         lightOn = false
     }
-    lightOn ? button.innerHTML= light : button.innerHTML= dark
+    !lightOn ? button.innerHTML= light : button.innerHTML= dark
 }
 
 

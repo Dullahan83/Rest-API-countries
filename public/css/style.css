@@ -16,8 +16,13 @@
   transition: background-color 1s;
 }
 
+html {
+  box-sizing: border-box;
+}
+
 body {
   width: 100vw;
+  max-width: 100%;
   height: 100vh;
   font-size: 14px;
   background-color: hsl(207deg, 26%, 17%);

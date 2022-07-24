@@ -75,6 +75,7 @@ for(let filter of selectOption){
         }
     })
 }
+
 function search(input){
     document.getElementById("countryList").innerHTML = ""
     let filter = countryArray.filter(country => {
@@ -87,5 +88,11 @@ function search(input){
 
 let input = document.querySelector(".searchBar input");
 input.addEventListener("input", (e) => {
-    search(e.target.value)
+    let string = e.target.value
+    if(string != ""){
+        string = string.replace(/^./, string[0].toUpperCase())
+    }
+    
+    console.log(search)
+    search(string)
 })
