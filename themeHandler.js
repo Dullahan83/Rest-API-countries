@@ -45,6 +45,6 @@ function playSound(sound){
     else{
         name = "Nuit"
     }
-    var audio = new Audio("../assets/" + name + ".mp3")
+    var audio = new Audio("./assets/" + name + ".mp3")
     audio.play()
 }
