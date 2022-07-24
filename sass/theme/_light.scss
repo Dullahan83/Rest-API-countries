@@ -1,0 +1,44 @@
+.light{
+    background-color: $bg-light;
+    header, header button{
+        background-color: $bg-light;
+        color: $text-light;
+    }
+    #search .searchBar label, #search .searchBar input{
+        background-color: $bg-light;
+        color: $text-light;
+    }
+    .filters #select{
+        background-color: $bg-light;
+        color: $text-light;
+    }
+    .filters .filterGroup{
+        background-color: $bg-light;
+        color: $text-light;
+    }
+
+    .filterGroup .filter{
+         input:checked + label{
+            background-color: darken($bg-light, 10)
+    }}
+
+    #countryList .card{
+        background-color: $elem-light;
+        color: $text-light;
+        img{
+            border-bottom: 1px solid rgba(0, 0, 0, 0.089);
+        }
+    }
+    .backButton{
+        background-color: $bg-light;
+        color: $text-light;
+    }
+
+    #details{
+        color: $text-light;
+        .neighbours button{
+            background-color: $bg-light;
+            color: $text-light;
+        }
+    }
+}

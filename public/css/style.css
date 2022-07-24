@@ -1,0 +1,455 @@
+@keyframes scale {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+  box-sizing: border-box;
+  transition: background-color 1s;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-size: 14px;
+  background-color: hsl(207deg, 26%, 17%);
+}
+body a {
+  text-decoration: none;
+}
+
+.bold {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.hover-pointer {
+  cursor: pointer;
+}
+
+.none {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1rem 4vw;
+  background-color: hsl(209deg, 23%, 22%);
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.212);
+}
+@media screen and (min-width: 768px) {
+  header {
+    padding: 1rem 5vw;
+  }
+}
+header h1 {
+  font-size: 16px;
+}
+header button {
+  background-color: hsl(209deg, 23%, 22%);
+  color: hsl(0deg, 0%, 100%);
+  border: none;
+}
+header button i {
+  margin-right: 0.5rem;
+}
+
+.card {
+  height: 670px;
+  width: 71vw;
+  background-color: hsl(209deg, 23%, 22%);
+  display: flex;
+  flex-direction: column;
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.13);
+}
+@media screen and (min-width: 768px) {
+  .card {
+    height: 335px;
+    width: 265px;
+  }
+}
+.card img {
+  height: 320px;
+}
+@media screen and (min-width: 768px) {
+  .card img {
+    height: 160px;
+  }
+}
+.card .description {
+  padding: 60px 7vw;
+}
+@media screen and (min-width: 768px) {
+  .card .description {
+    padding: 25px;
+  }
+}
+.card .description h3 {
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .card .description h3 {
+    margin-bottom: 1rem;
+  }
+}
+.card .description span {
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+.card .description p {
+  margin: 0.8rem 0;
+}
+@media screen and (min-width: 768px) {
+  .card .description p {
+    margin: 0.5rem 0;
+  }
+}
+
+#home {
+  font-size: 22px;
+  padding: 0 4vw;
+}
+@media screen and (min-width: 768px) {
+  #home {
+    padding: 0 5vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  #home {
+    font-size: 14px;
+  }
+}
+
+#search {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  margin-bottom: 9vw;
+}
+@media screen and (min-width: 768px) {
+  #search {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5vw;
+  }
+}
+#search .searchBar {
+  height: 55px;
+  width: 100%;
+  border: none;
+  display: flex;
+  align-content: center;
+  border-radius: 5px;
+  margin-bottom: 80px;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.13);
+}
+@media screen and (min-width: 768px) {
+  #search .searchBar {
+    margin: 0;
+    width: 33.5vw;
+  }
+}
+#search .searchBar label {
+  border-radius: 5px 0 0 5px;
+  height: 100%;
+  font-size: 16px;
+  width: 6vw;
+  border: none;
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(209deg, 23%, 22%);
+  padding: 0 0.5rem 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#search .searchBar input {
+  height: 100%;
+  width: 100%;
+  background-color: hsl(209deg, 23%, 22%);
+  border: none;
+  outline: none;
+  padding-left: 0.5rem;
+  border-radius: 0 5px 5px 0;
+  color: white;
+  font-size: 22px;
+}
+@media screen and (min-width: 768px) {
+  #search .searchBar input {
+    font-size: 14px;
+  }
+}
+
+.filters {
+  position: relative;
+}
+.filters #select {
+  display: flex;
+  align-items: center;
+  padding: 0 7%;
+  justify-content: space-between;
+  height: 100px;
+  width: 53vw;
+  background-color: hsl(209deg, 23%, 22%);
+  color: hsl(0deg, 0%, 100%);
+  border: none;
+  border-radius: 5px;
+  font-size: 22px;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.13);
+}
+@media screen and (min-width: 768px) {
+  .filters #select {
+    font-size: 14px;
+    height: 55px;
+    width: 200px;
+    padding: 0 1rem;
+  }
+}
+.filters .filterGroup {
+  flex-direction: column;
+  width: 53vw;
+  margin-top: 0.3rem;
+  background-color: hsl(209deg, 23%, 22%);
+  border-radius: 5px;
+  color: hsl(0deg, 0%, 100%);
+  position: absolute;
+  height: 287px;
+  padding: 1rem 0;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.13);
+  animation: scale 0.5s;
+}
+@media screen and (min-width: 768px) {
+  .filters .filterGroup {
+    width: 200px;
+    padding: 1rem 0;
+    line-height: 1.5rem;
+  }
+}
+.filters .filterGroup .filter {
+  display: flex;
+  height: 50px;
+}
+.filters .filterGroup .filter input {
+  display: none;
+}
+.filters .filterGroup .filter input:checked + label {
+  background-color: #3b4d5e;
+}
+.filters .filterGroup .filter label {
+  display: flex;
+  width: 100%;
+  padding: 0 7vw;
+  align-items: flex-end;
+  height: 100%;
+}
+@media screen and (min-width: 768px) {
+  .filters .filterGroup .filter label {
+    padding: 0 1rem;
+  }
+}
+
+#countryList {
+  display: grid;
+  width: 100%;
+  justify-items: center;
+  gap: 12vw;
+}
+@media screen and (min-width: 768px) {
+  #countryList {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 5vw;
+  }
+}
+
+#countryDetails {
+  font-size: 16px;
+  padding: 55px;
+}
+@media screen and (min-width: 992px) {
+  #countryDetails {
+    padding: 5vw;
+  }
+}
+
+.backButton {
+  width: 140px;
+  height: 45px;
+  border-radius: 5px;
+  border: none;
+  background-color: hsl(209deg, 23%, 22%);
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.253);
+}
+.backButton i {
+  margin-left: -1rem;
+  margin-right: 0.8rem;
+}
+
+#details {
+  display: flex;
+  margin-top: 8vh;
+  justify-content: space-between;
+  flex-direction: column;
+  color: hsl(0deg, 0%, 100%);
+}
+@media screen and (min-width: 992px) {
+  #details {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+#details img {
+  width: 85.5vw;
+  height: 460px;
+}
+@media screen and (min-width: 992px) {
+  #details img {
+    width: 39vw;
+    height: 29vw;
+    max-width: 560px;
+    max-height: 400px;
+  }
+}
+#details .country {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  line-height: 1.9;
+  justify-content: space-around;
+}
+@media screen and (min-width: 992px) {
+  #details .country {
+    width: 50%;
+  }
+}
+#details .country h3 {
+  font-size: 25px;
+  margin-top: 6.25rem;
+}
+@media screen and (min-width: 992px) {
+  #details .country h3 {
+    margin-top: 0;
+  }
+}
+#details .country .countryInfos {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 992px) {
+  #details .country .countryInfos {
+    flex-direction: row;
+    height: 160px;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+}
+#details .country .countryInfos div {
+  margin: 0;
+}
+@media screen and (min-width: 992px) {
+  #details .country .countryInfos div {
+    margin-right: 1rem;
+  }
+}
+#details .country .countryInfos div p {
+  margin: 1rem 0;
+}
+@media screen and (min-width: 992px) {
+  #details .country .countryInfos div p {
+    margin: 0.3rem 0;
+  }
+}
+#details .country .countryInfos .first p:last-of-type {
+  margin-bottom: 3rem;
+}
+#details .country .neighbours {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+}
+#details .country .neighbours p {
+  width: 100%;
+  align-self: center;
+}
+@media screen and (min-width: 992px) {
+  #details .country .neighbours p {
+    width: fit-content;
+  }
+}
+#details .country .neighbours button {
+  width: 95px;
+  height: 30px;
+  margin: 0.5rem 0.5rem;
+  background-color: hsl(209deg, 23%, 22%);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.13);
+  color: hsl(0deg, 0%, 100%);
+}
+#details .country .neighbours button:first-of-type {
+  margin-left: 0;
+}
+@media screen and (min-width: 992px) {
+  #details .country .neighbours button:first-of-type {
+    margin-left: 0.5rem;
+  }
+}
+
+.light {
+  background-color: hsl(0deg, 0%, 98%);
+}
+.light header, .light header button {
+  background-color: hsl(0deg, 0%, 98%);
+  color: hsl(200deg, 15%, 8%);
+}
+.light #search .searchBar label, .light #search .searchBar input {
+  background-color: hsl(0deg, 0%, 98%);
+  color: hsl(200deg, 15%, 8%);
+}
+.light .filters #select {
+  background-color: hsl(0deg, 0%, 98%);
+  color: hsl(200deg, 15%, 8%);
+}
+.light .filters .filterGroup {
+  background-color: hsl(0deg, 0%, 98%);
+  color: hsl(200deg, 15%, 8%);
+}
+.light .filterGroup .filter input:checked + label {
+  background-color: #e0e0e0;
+}
+.light #countryList .card {
+  background-color: hsl(0deg, 0%, 100%);
+  color: hsl(200deg, 15%, 8%);
+}
+.light #countryList .card img {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.089);
+}
+.light .backButton {
+  background-color: hsl(0deg, 0%, 98%);
+  color: hsl(200deg, 15%, 8%);
+}
+.light #details {
+  color: hsl(200deg, 15%, 8%);
+}
+.light #details .neighbours button {
+  background-color: hsl(0deg, 0%, 98%);
+  color: hsl(200deg, 15%, 8%);
+}
+
+/*# sourceMappingURL=style.css.map */

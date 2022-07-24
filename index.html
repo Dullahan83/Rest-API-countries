@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Countries API Home</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,600;0,800;1,300;1,600;1,800&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+</head>
+<body class="light">
+    <header>
+        <h1>Where in the world?</h1>
+        <button id="themeSwitch" class="hover-pointer"><i class="fa-solid fa-moon"></i>Dark Mode</button>
+    </header>
+    <main id="home">
+        <section id="search">
+            <div class="searchBar">
+                <label for="search" class="label"><i class="fa-solid fa-magnifying-glass"></i></label>
+                <input type="text" placeholder="Search for a country" name="search">
+            </div>
+            <div class="filters">
+                <button id="select" class="hover-pointer">Filter by Region <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="filterGroup none">
+                    <div class="filter">
+                        <input type="checkbox" name="Africa" id="Africa">
+                        <label for="Africa">Africa</label>
+                    </div>  
+                    <div class="filter">
+                        <input type="checkbox" name="America" id="America">
+                        <label for="America">America</label>
+                    </div>
+                    <div class="filter">
+                        <input type="checkbox" name="Asia" id="Asia">
+                        <label for="Asia">Asia</label>
+                    </div>
+                    <div class="filter">
+                        <input type="checkbox" name="Europe" id="Europe">
+                        <label for="Europe">Europe</label>
+                    </div>
+                    <div class="filter">
+                        <input type="checkbox" name="Oceania" id="Oceania">
+                        <label for="Oceania">Oceania</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="countryList">
+            
+        </section>
+    </main>
+    <script src="./js/home.js" defer></script>
+    <script src="./js/themeHandler.js"></script>
+</body>
+</html>

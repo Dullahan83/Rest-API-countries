@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+    transition: background-color 1s;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-size: 14px;
+    background-color: $bg-dark;
+    a{
+        text-decoration: none;
+    }
+}
+.bold{
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.hover-pointer{
+    cursor: pointer;
+}
+.none{
+    display: none;
+}
+
+.flex{
+    display: flex;
+}

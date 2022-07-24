@@ -1,0 +1,46 @@
+.card{
+    height: 670px;
+    width: 71vw;
+    background-color: $elem-dark;
+    display: flex;
+    flex-direction: column;
+    color: $elem-light;
+    @include box-shadow;
+    @media screen and(min-width:768px) {
+        height: 335px;
+        width: 265px;
+    }
+    img{
+        height: 320px;
+        @media screen and(min-width:768px) {
+            height: 160px;
+        }
+         
+    }
+    .description{
+        padding: 60px 7vw;
+        @media screen and(min-width: 768px) {
+            padding: 25px;
+        }
+        h3{
+            margin-bottom: 3rem;
+            @media screen and(min-width:768px) {
+                margin-bottom: 1rem;
+            }
+        }
+        span{
+            font-weight: 600;
+            margin-right: 0.5rem;
+            @media screen and(min-width:768px) {
+              
+            }
+        }
+        p{
+            margin: 0.8rem 0;
+            @media screen and(min-width:768px) {
+                margin: 0.5rem 0;
+            }
+            
+        }
+    }
+}

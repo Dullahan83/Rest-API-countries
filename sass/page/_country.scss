@@ -1,0 +1,116 @@
+#countryDetails{
+    font-size: 16px;
+    padding: 55px;
+    @media screen and(min-width: 992px) {
+        padding: 5vw;
+    }
+}
+
+.backButton{
+    width: 140px;
+    height: 45px;
+    border-radius: 5px;
+    border: none;
+    background-color: $elem-dark;
+    color: $elem-light;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.253);
+    i{
+        margin-left: -1rem;
+        margin-right: 0.8rem;
+    }
+}
+
+#details{
+    display: flex;
+    margin-top: 8vh;
+    justify-content: space-between;
+    flex-direction: column;
+    color: $elem-light;
+    @media screen and(min-width: 992px) {
+        flex-direction: row;
+        align-items: center;
+    }
+    img{
+        width: 85.5vw;
+        height: 460px;
+        
+        @media screen and(min-width: 992px) {
+            width: 39vw;
+            height: 29vw;
+            max-width: 560px;
+            max-height: 400px;
+        }
+    }
+    .country{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        line-height: 1.9;
+        justify-content: space-around;
+        @media screen and(min-width: 992px) {
+            width: 50%;   
+        }
+        h3{
+            font-size: 25px;
+            margin-top: 6.25rem;
+            @media screen and(min-width: 992px) {
+                margin-top: 0;
+            }
+        }
+        .countryInfos{
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            @media screen and(min-width: 992px) {
+                flex-direction: row;
+                height: 160px;
+                justify-content: space-between;
+                margin-top: 1rem;
+            }
+            div{
+                margin: 0;
+                @media screen and(min-width: 992px) {
+                    margin-right: 1rem;
+                }
+                p{
+                    margin: 1rem 0;
+                    @media screen and(min-width: 992px) {
+                        margin: 0.3rem 0;
+                    }
+                
+                }
+            }
+            .first p:last-of-type{
+                margin-bottom: 3rem;
+            }
+        }
+        .neighbours{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 5rem;
+            p{
+                width: 100%;
+                align-self: center;
+                @media screen and(min-width: 992px) {
+                    width: fit-content;
+                }
+            }
+            button{
+                width: 95px;
+                height: 30px;
+                margin: 0.5rem 0.5rem;
+                background-color: $elem-dark;
+                border: none;
+                border-radius: 5px;
+                box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.13);
+                color: $elem-light;
+            }
+            button:first-of-type{
+                margin-left: 0;
+                @media screen and(min-width: 992px) {
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+}
