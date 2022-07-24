@@ -6,6 +6,7 @@ header{
     background-color: $elem-dark;
     color: $elem-light;
     box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.212) ;
+    box-sizing: border-box;
     @media screen and (min-width:768px) {
         padding: 1rem 5vw;
     }
