@@ -12,7 +12,7 @@
     #search .searchBar input::placeholder{
         color: $text-light
     }
-    
+
     .filters #select{
         background-color: $bg-light;
         color: $text-light;
@@ -22,10 +22,7 @@
         color: $text-light;
     }
 
-    .filterGroup .filter{
-         input:checked + label{
-            background-color: darken($bg-light, 10)
-    }}
+   
 
     #countryList .card{
         background-color: $elem-light;

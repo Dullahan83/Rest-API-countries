@@ -257,7 +257,7 @@ header button i {
   display: none;
 }
 .filters .filterGroup .filter input:checked + label {
-  background-color: #3b4d5e;
+  color: red;
 }
 .filters .filterGroup .filter label {
   display: flex;
@@ -441,9 +441,6 @@ header button i {
 .light .filters .filterGroup {
   background-color: hsl(0deg, 0%, 98%);
   color: hsl(200deg, 15%, 8%);
-}
-.light .filterGroup .filter input:checked + label {
-  background-color: #e0e0e0;
 }
 .light #countryList .card {
   background-color: hsl(0deg, 0%, 100%);

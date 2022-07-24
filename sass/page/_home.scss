@@ -118,7 +118,7 @@
             input{
                 display: none;
                 &:checked + label{
-                    background-color: lighten($elem-dark, 8);
+                    color: red;
                 }
             }
             label{
