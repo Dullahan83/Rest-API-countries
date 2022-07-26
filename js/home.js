@@ -13,6 +13,7 @@ function createCard(country){
     let codePlace = document.getElementById("countryList")
     let population = new Intl.NumberFormat("en-EN").format(country.population)
     let div = document.createElement("div")
+    let capital = country.capital ? country.capital : ""
     div.setAttribute("class", "country")
     div.innerHTML = `<a href="./country.html?name=${country.name.common}">
                             <figure class="card">
@@ -21,7 +22,7 @@ function createCard(country){
                                     <h3 class="countryName">${country.name.common}</h3>
                                     <p class="population"><span>Population:</span>${population}</p>
                                     <p class="region"><span>Region:</span>${country.region}</p>
-                                    <p class="capital"><span>Capital:</span>${country.capital}</p>
+                                    <p class="capital"><span>Capital:</span>${capital}</p>
                                 </figcaption>
                             </figure>
                             </a>
@@ -38,9 +39,6 @@ async function getData(){
     for(let country of countryArray){
         createCard(country)
     }
-    /* for(let i = 0; i<10; i++){
-        createCard(countryArray[i])
-    } */
 }
 
 
@@ -66,20 +64,36 @@ select.addEventListener("click",() =>{
 
 let selectOption = document.querySelectorAll(".filter input")
 for(let filter of selectOption){
+    let choice = ""
+    filter.nextElementSibling.style.color = "white"
     filter.addEventListener("click", (e) => {
         if(e.target.checked){
+            choice = e.target.id
             filterByRegion(e.target.name)
+            resetFilter(selectOption, choice)
+            filter.nextElementSibling.style.color = "red"
         }
         else{
+            filter.nextElementSibling.style.color = "white"
             getData()
         }
+        console.log("choice:" + choice)
     })
+}
+
+function resetFilter(selectOption, chosenFilter){
+    for(let option of selectOption){
+        if(option.id != chosenFilter){
+            option.nextElementSibling.style.color = "white"
+            option.checked = false
+        }
+    }
 }
 
 function search(input){
     document.getElementById("countryList").innerHTML = ""
     let filter = countryArray.filter(country => {
-        return country.name.common.includes(input)
+        return country.name.common.toLowerCase().includes(input)
     })
     for(let country of filter){
         createCard(country)
@@ -88,11 +102,6 @@ function search(input){
 
 let input = document.querySelector(".searchBar input");
 input.addEventListener("input", (e) => {
-    let string = e.target.value
-    if(string != ""){
-        string = string.replace(/^./, string[0].toUpperCase())
-    }
-    
-    console.log(search)
+    let string = e.target.value.toLowerCase()
     search(string)
 })

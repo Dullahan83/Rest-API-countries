@@ -262,9 +262,6 @@ header button i {
 .filters .filterGroup .filter input {
   display: none;
 }
-.filters .filterGroup .filter input:checked + label {
-  color: red;
-}
 .filters .filterGroup .filter label {
   display: flex;
   width: 100%;

@@ -119,9 +119,7 @@
             height: 50px;
             input{
                 display: none;
-                &:checked + label{
-                    color: red;
-                }
+                
             }
             label{
                 display: flex;
