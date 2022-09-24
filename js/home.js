@@ -1,7 +1,7 @@
 /* https://restcountries.com/v3.1/all */
+const theme = localStorage.getItem("lightTheme");
 let index = 0;
 let countryArray;
-
 (async () => {
    getData();
 })();
@@ -62,7 +62,8 @@ select.addEventListener("click", () => {
 let selectOption = document.querySelectorAll(".filter input");
 for (let filter of selectOption) {
    let choice = "";
-   filter.nextElementSibling.style.color = "white";
+   filter.nextElementSibling.style.color =
+      theme && theme == "true" ? "hsl(200, 15%, 8%)" : "white";
    filter.addEventListener("click", (e) => {
       if (e.target.checked) {
          choice = e.target.id;
@@ -71,18 +72,19 @@ for (let filter of selectOption) {
          filter.nextElementSibling.style.color = "red";
       } else {
          document.getElementById("countryList").innerHTML = "";
-         filter.nextElementSibling.style.color = "white";
+         filter.nextElementSibling.style.color =
+            theme && theme == "true" ? "hsl(200, 15%, 8%)" : "white";
          for (let country of countryArray) {
             createCard(country);
          }
       }
    });
 }
-
 function resetFilter(selectOption, chosenFilter) {
    for (let option of selectOption) {
       if (option.id != chosenFilter) {
-         option.nextElementSibling.style.color = "white";
+         option.nextElementSibling.style.color =
+            theme && theme == "true" ? "hsl(200, 15%, 8%)" : "white";
          option.checked = false;
       }
    }

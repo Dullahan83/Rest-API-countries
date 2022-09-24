@@ -426,11 +426,13 @@ header button i {
 .light {
   background-color: hsl(0deg, 0%, 98%);
 }
-.light header, .light header button {
+.light header,
+.light header button {
   background-color: hsl(0deg, 0%, 98%);
   color: hsl(200deg, 15%, 8%);
 }
-.light #search .searchBar label, .light #search .searchBar input {
+.light #search .searchBar label,
+.light #search .searchBar input {
   background-color: hsl(0deg, 0%, 98%);
   color: hsl(200deg, 15%, 8%);
 }
