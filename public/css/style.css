@@ -241,7 +241,6 @@ header button i {
   margin-top: 0.3rem;
   background-color: hsl(209deg, 23%, 22%);
   border-radius: 5px;
-  color: hsl(0deg, 0%, 100%);
   position: absolute;
   height: 287px;
   padding: 1rem 0;
@@ -262,12 +261,16 @@ header button i {
 .filters .filterGroup .filter input {
   display: none;
 }
+.filters .filterGroup .filter .active {
+  color: red;
+}
 .filters .filterGroup .filter label {
   display: flex;
   width: 100%;
   padding: 0 7vw;
   align-items: flex-end;
   height: 100%;
+  color: hsl(0deg, 0%, 100%);
 }
 @media screen and (min-width: 768px) {
   .filters .filterGroup .filter label {
@@ -445,7 +448,12 @@ header button i {
 }
 .light .filters .filterGroup {
   background-color: hsl(0deg, 0%, 98%);
+}
+.light .filterGroup .filter label {
   color: hsl(200deg, 15%, 8%);
+}
+.light .filterGroup .filter .active {
+  color: red;
 }
 .light #countryList .card {
   background-color: hsl(0deg, 0%, 100%);
@@ -464,6 +472,10 @@ header button i {
 .light #details .neighbours button {
   background-color: hsl(0deg, 0%, 98%);
   color: hsl(200deg, 15%, 8%);
+}
+
+.active {
+  color: red;
 }
 
 /*# sourceMappingURL=style.css.map */

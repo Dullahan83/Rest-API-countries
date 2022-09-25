@@ -5,7 +5,7 @@ let countryArray;
 (async () => {
    getData();
 })();
-
+console.log(theme);
 function createCard(country) {
    let codePlace = document.getElementById("countryList");
    let population = new Intl.NumberFormat("en-EN").format(country.population);
@@ -62,18 +62,20 @@ select.addEventListener("click", () => {
 let selectOption = document.querySelectorAll(".filter input");
 for (let filter of selectOption) {
    let choice = "";
-   filter.nextElementSibling.style.color =
-      theme && theme == "true" ? "hsl(200, 15%, 8%)" : "white";
+   /* filter.nextElementSibling.style.color =
+      theme && theme == "true" ? "hsl(200, 15%, 8%)" : "white"; */
    filter.addEventListener("click", (e) => {
       if (e.target.checked) {
          choice = e.target.id;
          filterByRegion(e.target.name);
          resetFilter(selectOption, choice);
-         filter.nextElementSibling.style.color = "red";
+         e.target.nextElementSibling.classList.toggle("active");
+         /* filter.nextElementSibling.style.color = "red"; */
       } else {
          document.getElementById("countryList").innerHTML = "";
-         filter.nextElementSibling.style.color =
-            theme && theme == "true" ? "hsl(200, 15%, 8%)" : "white";
+         e.target.nextElementSibling.classList.remove("active");
+         /*  filter.nextElementSibling.style.color =
+            theme && theme == "true" ? "hsl(200, 15%, 8%)" : "white"; */
          for (let country of countryArray) {
             createCard(country);
          }
@@ -83,8 +85,9 @@ for (let filter of selectOption) {
 function resetFilter(selectOption, chosenFilter) {
    for (let option of selectOption) {
       if (option.id != chosenFilter) {
-         option.nextElementSibling.style.color =
-            theme && theme == "true" ? "hsl(200, 15%, 8%)" : "white";
+         option.nextElementSibling.classList.remove("active");
+         /* option.nextElementSibling.style.color =
+            theme && theme == "true" ? "hsl(200, 15%, 8%)" : "white"; */
          option.checked = false;
       }
    }

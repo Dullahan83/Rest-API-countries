@@ -21,9 +21,13 @@
    }
    .filters .filterGroup {
       background-color: $bg-light;
+   }
+   .filterGroup .filter label {
       color: $text-light;
    }
-
+   .filterGroup .filter .active {
+      color: red;
+   }
    #countryList .card {
       background-color: $elem-light;
       color: $text-light;
@@ -43,4 +47,7 @@
          color: $text-light;
       }
    }
+}
+.active {
+   color: red;
 }

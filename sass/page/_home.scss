@@ -1,151 +1,141 @@
-
-
-#home{
-    font-size: 22px;
-    @include padding;
-    @media screen and(min-width:768px) {
-        font-size: 14px;
-    }
+#home {
+   font-size: 22px;
+   @include padding;
+   @media screen and(min-width:768px) {
+      font-size: 14px;
+   }
 }
-#search{
-    display: flex;
-    flex-direction: column;
-    padding-top: 50px; 
-    margin-bottom: 9vw;
-    @media screen and(min-width:768px) {
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 5vw;
-       
-    }
-    .searchBar{
-        height: 55px;
-        width: 100%;
-        border: none;
-        display: flex;
-        align-content: center;
-        border-radius: 5px;
-        margin-bottom: 80px;
-        @include box-shadow;
-        @media screen and(min-width:768px) {
-            margin: 0;
-            width: 33.5vw;
-        }
-        label{
-            border-radius: 5px 0 0 5px;
-            height: 100%;
-            font-size: 16px;
-            width: 6vw;
-            border: none;
-            color: $elem-light;
-            background-color: $elem-dark;
-            padding: 0 2rem 0 3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            @media screen and(min-width: 768px) {
-                padding: 0 0.5rem 0 1rem;
-            }
-            
-           
-        }
-        input{
-            height: 100%;
-            width: 100%;
-            background-color: $elem-dark;
-            border: none;
-            outline: none;
-            padding-left: 0.5rem;
-            border-radius: 0 5px 5px 0;
+#search {
+   display: flex;
+   flex-direction: column;
+   padding-top: 50px;
+   margin-bottom: 9vw;
+   @media screen and(min-width:768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 5vw;
+   }
+   .searchBar {
+      height: 55px;
+      width: 100%;
+      border: none;
+      display: flex;
+      align-content: center;
+      border-radius: 5px;
+      margin-bottom: 80px;
+      @include box-shadow;
+      @media screen and(min-width:768px) {
+         margin: 0;
+         width: 33.5vw;
+      }
+      label {
+         border-radius: 5px 0 0 5px;
+         height: 100%;
+         font-size: 16px;
+         width: 6vw;
+         border: none;
+         color: $elem-light;
+         background-color: $elem-dark;
+         padding: 0 2rem 0 3rem;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         @media screen and(min-width: 768px) {
+            padding: 0 0.5rem 0 1rem;
+         }
+      }
+      input {
+         height: 100%;
+         width: 100%;
+         background-color: $elem-dark;
+         border: none;
+         outline: none;
+         padding-left: 0.5rem;
+         border-radius: 0 5px 5px 0;
+         color: white;
+         font-size: 22px;
+         &::placeholder {
             color: white;
-            font-size: 22px;
-            &::placeholder{
-                color: white;
-            }
-            @media screen and(min-width:768px) {
-                font-size: 14px;
-            }
-        }
-       
-    }
-}
-
-
-
-
-.filters{
-    position: relative;
-    #select{
-        display: flex;
-        align-items: center;
-        padding: 0 7%;
-        justify-content: space-between;
-        height: 100px;
-        width: 53vw;
-        background-color: $elem-dark;
-        color: $elem-light;
-        border: none;
-        border-radius: 5px;
-        font-size: 22px;
-        @include box-shadow;
-        
-        @media screen and(min-width:768px) {
+         }
+         @media screen and(min-width:768px) {
             font-size: 14px;
-            height: 55px;
-            width: 200px;
-            padding: 0 1rem;
-        }
-    }
-    
-    .filterGroup{
-        flex-direction: column;
-        width: 53vw;
-        margin-top: 0.3rem;
-        background-color: $elem-dark;
-        border-radius: 5px;
-        color: $elem-light;
-        position: absolute;
-        height: 287px;
-        padding: 1rem 0;
-        @include box-shadow;
-        animation: scale 0.5s;
-        @media screen and(min-width:768px) {
-            width: 200px;
-            padding: 1rem 0;
-            line-height: 1.5rem;
-        }
-        .filter{
-            display: flex;
-            height: 50px;
-            input{
-                display: none;
-                
-            }
-            label{
-                display: flex;
-                width: 100%;
-                padding: 0 7vw;
-                align-items: flex-end;
-                height: 100%;
-                @media screen and(min-width:768px) {
-                    padding: 0 1rem;
-                }
-                
-            }
-            
-        }
-        
-       
-    }
+         }
+      }
+   }
 }
 
-#countryList{
-    display: grid;
-    width: 100%;
-    justify-items: center;
-    gap: 12vw;   
-    @media screen and(min-width:768px) {
-        grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
-        gap: 5vw;
-    }
+.filters {
+   position: relative;
+   #select {
+      display: flex;
+      align-items: center;
+      padding: 0 7%;
+      justify-content: space-between;
+      height: 100px;
+      width: 53vw;
+      background-color: $elem-dark;
+      color: $elem-light;
+      border: none;
+      border-radius: 5px;
+      font-size: 22px;
+      @include box-shadow;
+
+      @media screen and(min-width:768px) {
+         font-size: 14px;
+         height: 55px;
+         width: 200px;
+         padding: 0 1rem;
+      }
+   }
+
+   .filterGroup {
+      flex-direction: column;
+      width: 53vw;
+      margin-top: 0.3rem;
+      background-color: $elem-dark;
+      border-radius: 5px;
+
+      position: absolute;
+      height: 287px;
+      padding: 1rem 0;
+      @include box-shadow;
+      animation: scale 0.5s;
+      @media screen and(min-width:768px) {
+         width: 200px;
+         padding: 1rem 0;
+         line-height: 1.5rem;
+      }
+      .filter {
+         display: flex;
+         height: 50px;
+         input {
+            display: none;
+         }
+         .active {
+            color: red;
+         }
+         label {
+            display: flex;
+            width: 100%;
+            padding: 0 7vw;
+            align-items: flex-end;
+            height: 100%;
+            color: $elem-light;
+            @media screen and(min-width:768px) {
+               padding: 0 1rem;
+            }
+         }
+      }
+   }
+}
+
+#countryList {
+   display: grid;
+   width: 100%;
+   justify-items: center;
+   gap: 12vw;
+   @media screen and(min-width:768px) {
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 5vw;
+   }
 }
